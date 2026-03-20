@@ -29,23 +29,26 @@
             ];
 
             //YOUR CODE HERE
+
+            //array of month names to convert number to word 
             const months = [
                 "January", "February", "March", "April",
                 "May", "June", "July", "August",
                 "September", "October", "November", "December"
             ];
 
-            let output = "";
-
+            let output = ""; //here, to store all formatted articles 
+            //looping through each article in the data array
             data.forEach(function(article) {
-            let parts = article.creation_date.split("-");
+            let parts = article.creation_date.split("-"); //Splitting the data into year, month and day
             let year = parts[0];
-            let month = months[parseInt(parts[1]) - 1];
+            let month = months[parseInt(parts[1]) - 1]; //converting month number to month name 
             let day = parseInt(parts[2]);
-
+            
+            //building formatted sentence for each article
             output += `Article "${article.title}" (Page ID ${article.page_id}) was created at ${month} ${day}, ${year}.\n`;
-        });
-
+            });
+            //displaying final output in results section. 
             document.getElementById("results").innerText = output;
 
 

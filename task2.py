@@ -1,9 +1,12 @@
 import csv
 import requests
 
+# This script reads a list of URLs from a CSV file,
+# checks if each one is reachable, and prints the status code.
+# I also save the results to a text file for easy reference.
 # I used two libraries:
-# csv - to read the input file containing the URLs
-# requests - to visit each URL and get its response status code
+# csv: to read the input file containing the URLs
+# requests: to visit each URL and get its response status code
 
 # This list will store every result so I can save them to a file later
 results = []

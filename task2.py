@@ -15,13 +15,13 @@ with open('Task 2 - Intern.csv', 'r') as file:
     # The first row is just the column name "urls", so I skip it
     next(reader)
 
-    # Go through the file one URL at a time
+    # Going through the file one URL at a time
     for row in reader:
 
-        # Clean up any extra spaces around the URL
+        # Cleaning extra spaces around the URL
         url = row[0].strip()
 
-        # Only process the row if it actually has a URL in it
+        # Only processing the row if it actually has a URL in it
         if url:
             try:
                 # Visit the URL
@@ -32,7 +32,7 @@ with open('Task 2 - Intern.csv', 'r') as file:
                 line = f"({response.status_code}) {url}"
                 print(line)
 
-                # Also save it to the results list
+                # Then saving it to the results list
                 results.append(line)
 
             # If the server took too long to respond
